@@ -56,17 +56,9 @@ function dt() {
 }
 
 API_KEY=""
-WALLET=0x39cE119C46e5955e8e7fC5d1d22912DFe11CF0C5
+WALLET=yourwalletgoeshere
 
 MINER=/usr/local/bin/zilminer 
-
-# if [[ ${NVIDIA_VERSION} == *"396"* ]]; then
-#     MINER=/hive/miners/ethminer/zilminer/0.1.25-cuda92/zilminer
-
-#     if [[ -f "zilminer92" ]]; then
-#         MINER="./zilminer92"
-#     fi
-# fi
 
 # Kill default
 for pid in $(pidof zilminer); do
@@ -74,20 +66,6 @@ for pid in $(pidof zilminer); do
     sleep 1
 done
 
-# # Kill cuda92
-# for pid in $(pidof zilminer92); do
-#     kill -9 $pid
-#     sleep 1
-# done
-
-# # Kill cuda92
-# for pid in $(pidof zilminer10); do
-#     kill -9 $pid
-#     sleep 1
-# done
-
-#NVIDIA=$(nvidia-smi --query-gpu=gpu_name --format=csv,noheader | base64 -w 0)
-# NVIDIA=$(cat /run/hive/gpu-detect.json | grep -B1 '"brand": "nvidia",' | grep '"name"' | cut -f2 -d":" | sed 's/ "//g' | sed 's/",//g' | base64 -w 0)
 NVIDIA=""
 AMD=$(cat /run/hive/gpu-detect.json | grep -B1 '"brand": "amd",' | grep '"name"' | cut -f2 -d":" | sed 's/ "//g' | sed 's/",//g' | base64 -w 0)
 
@@ -160,9 +138,9 @@ while true; do
        GPUS=$(echo ${line} | awk -F" " '{print $2}' | sed 's/,/ /g')
 
        if [[ -z "$NVIDIA" ]]; then
-           ${MINER} --farm-recheck 2000 -P zil://${WALLET}.$HOSTNAME@dimitry.cryptowhizzard.com:4202/api > /logs/zilminer.log 2>&1 &
+           ${MINER} -P zil://${WALLET}.$HOSTNAME@mine.zilliqaminer.com:4202/api > /logs/zilminer.log 2>&1 &
        else
-           ${MINER} --farm-recheck 2000 -P zil://${WALLET}.$HOSTNAME@dimitry.cryptowhizzard.com:4202/api > /logs/zilminer.log 2>&1 &
+           ${MINER} -P zil://${WALLET}.$HOSTNAME@mine.zilliqaminer.com:4202/api > /logs/zilminer.log 2>&1 &
        fi
        
        let COUNTER++
