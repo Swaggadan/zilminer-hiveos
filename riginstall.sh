@@ -8,7 +8,7 @@ chmod +x zil-miner-hive.sh
 cd /root 
 mkdir miner 
 cd miner 
-wget http://zilliqa.nlpool.nl:81/zil0.2.tar.gz -O zil0.2.tar.gz 
+wget https://github.com/cryptowhizzard/zilminer-hiveos/releases/download/1.0/zil0.2.tar.gz -O zil0.2.tar.gz 
 tar -zxvf zil0.2.tar.gz 
 cd 0.2 
 rm /usr/local/bin/kernels -rf
