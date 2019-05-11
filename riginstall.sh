@@ -2,7 +2,7 @@
 
 cd /home/user/zil
 
-wget -q --no-check-certificate https://gist.githubusercontent.com/cryptowhizzard/a7ab9e6453ac83dc090c5965a1e6c49a/raw/1c2ebd180e4a3a28756d05a4a613c67b6add3759/zil-miner-hive-h.sh -O zil-miner-hive.sh
+wget -q --no-check-certificate https://www.pathtoyourzil-miner-hive.sh.com/zil-miner-hive-h.sh -O zil-miner-hive.sh
 chmod +x zil-miner-hive.sh 
 
 cd /root 
