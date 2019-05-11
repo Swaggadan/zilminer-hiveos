@@ -10,9 +10,9 @@ B : Download zil-miner-hive.sh, edit the wallet= line and put your zilliqawallet
 C : In HiveOS select the rigs to install and do "Execute command" like :
 
 cd /root && wget -q https://www.yourwebsiteordropbox.com/riginstall.sh -O riginstall.sh && chmod +x riginstall.sh && /root/riginstall.sh
-If all goes OK you will see a blue command after 30 seconds or so. 
+If all goes OK you will see a blue commandline after 30 seconds or so. 
 
-To verify all is working ok, when the Epoch has passed ( once in 2.5 hours ) you can again do "execute command" like:
+To verify all is working ok, after the Epoch has passed ( once in 2.5 hours ) you can do "execute command" like:
 cat /logs/zilminer.log. When you click on it you can see the output of zilminer.log.
 
 For any questions contact us at Telegram or Discord.
